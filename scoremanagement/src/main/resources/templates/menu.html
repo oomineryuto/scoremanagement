@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/menu.css" rel="stylesheet">
+    <title>メニュー</title>
+
+<body>
+<p class="user_name">[[ ${session.user.login_id} ]]さん、こんにちは</p>
+<div class="container">
+
+
+    <p class="fsize">メニュー画面</p>
+    <div class="button_solid002">
+        <a href="/insert">新しいデータの入力</a>
+    </div>
+    <br>
+    <div class="button_solid003">
+        <a href="result.html">過去のデータを見る</a>
+    </div>
+    <br>
+    <div class="button_solid004">
+        <a href="login.html">ログアウト</a>
+    </div>
+</div>
+</body>

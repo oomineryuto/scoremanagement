@@ -1,0 +1,28 @@
+.design01 {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+   }
+   .design01 th {
+    padding: 10px;
+    background: #e9faf9;
+    border: solid 1px #778ca3;
+   }
+   .design01 td {
+    padding: 10px;
+    border: solid 1px #778ca3;
+   }
+   .basic-btn {
+    width: auto;
+    height: auto;
+    border: none;
+    border-radius: 5px;
+    background-color: #004a94;
+    padding: auto;
+    line-height: 2;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+    color: white;
+    margin: 10px;
+  }

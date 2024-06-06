@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>商品詳細</title>
+    <link href="/css/commons.css" rel="stylesheet">
+</head>
+<body>
+
+<th:block th:insert="common/header"></th:block>
+<hr>
+
+<div class="update">
+    <div class="form-body">
+        <div class="img_block">
+
+        </div>
+        <form th:action="@{/detail/__${id}__}" method="post">
+            <fieldset class="label-130 product_block">
+                <div>
+                    <label>学年</label>
+                    <input type="text" name="product_id" th:value="${detail.product_id}" readonly class="base-text">
+                </div>
+                <div>
+                    <label>点数</label>
+                    <input type="text" name="name" th:value="${detail.name}" readonly class="base-text">
+                </div>
+                <div>
+                    <label>科目</label>
+                    <input type="text" name="price" th:value="${detail.price}" readonly class="base-text">
+                </div>
+                <div>
+                    <label>模試の種類</label>
+                    <input type="text" name="price" th:value="${product.price}" class="base-text" th:filed="*{price}">
+                    <span class="error" th:each="error: ${#fields.errors('price')}">
+                        [[ ${error} ]]
+                    </span>
+                </div>
+                    <label>偏差値</label>
+                    <input type="text" name="price" th:value="${detail.price}" readonly class="base-text">
+                </div>
+            </fieldset>
+            <div>
+                <div class="btns">
+                    <input type="button" onclick="openModal()" value="削除" class="basic-btn" th:if="${session.user.role==1}">
+                    <input type="button" onclick="location.href='update.html'" value="編集" class="basic-btn" th:if="${session.user.role==1}">
+                    <input type="button" onclick="location.href='result.html'" value="戻る" class="cancel-btn">
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

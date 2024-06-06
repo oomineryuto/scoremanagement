@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/user.css">
+    <title>新規登録画面</title>
+<body>
+<div class="container">
+    <p class="success">[[${success}]]</p>
+    <form action="/user" method="post"th:object="${UserForm}" >
+        <p class="fsize">新規登録画面</p>
+        <input type="text" name="loginId" placeholder="Username" th:filed="${loginID}">
+        <div class="error" th:each="error: ${#fields.errors('loginId')}">
+            [[ ${error} ]]
+        </div>
+        <input type="password" name="password"  placeholder="Password"th:filed="${password}">
+        <div class="error" th:each="error: ${#fields.errors('password')}">
+            [[ ${error} ]]
+        </div>
+        <p class="error">[[${error}]]</p>
+        <button type="submit">登録</button>
+        <br><br>
+        <a href="/login">←ログイン画面に戻る</a>
+    </form>
+</div>
+</body>
+</head>
+</html>
