@@ -78,4 +78,20 @@ public class userManagementController {
     public String insert(Model model){
         return "insert";
     }
+    //データ一覧画面
+    @GetMapping("/result")
+    public String result(Model model){
+        return "result";
+    }
+    //ログアウト
+    @GetMapping("/login")
+
+    public String logout(Model model){
+        return "login";
+    }
+    @PostMapping("/logout")
+    public String logout(@ModelAttribute("loginForm") UserForm userForm) {
+        session.invalidate();
+        return "logout";
+    }
 }
