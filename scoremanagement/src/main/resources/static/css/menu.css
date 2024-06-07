@@ -28,16 +28,7 @@
     border-radius: 3px;
     border-radius: 50px;
 }
-.button_solid002 a:after {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transition: 0.2s ease-in-out;
-    content: "\f0da";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    transform: translateY(-50%);
-}
+
 .button_solid002 a:hover {
     transform: translateY(-2px);
     box-shadow: 0 15px 30px -5px rgb(0 0 0 / 15%), 0 0 5px rgb(0 0 0 / 10%);
@@ -60,48 +51,27 @@
     border-radius: 3px;
     border-radius: 50px;
 }
-.button_solid003 a:after {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transition: 0.2s ease-in-out;
-    content: "\f0da";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    transform: translateY(-50%);
-}
+
 .button_solid003 a:hover {
     transform: translateY(-2px);
     box-shadow: 0 15px 30px -5px rgb(0 0 0 / 15%), 0 0 5px rgb(0 0 0 / 10%);
 }
-/*solid004*/
-.button_solid004 a {
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 240px;
+button[type="submit"] {
+    width: 100%;
     padding: 10px 25px;
-    color: #FFF;
-    transition: 0.3s ease-in-out;
-    font-weight: 600;
-    background: #00ff59;
-    filter: drop-shadow(0px 2px 4px #ccc);
+    background-color: #00ff59;
+    color: #ffffff;
+    border: none;
     border-radius: 3px;
     border-radius: 50px;
-}
-.button_solid004 a:after {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transition: 0.2s ease-in-out;
-    content: "\f0da";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    transform: translateY(-50%);
-}
-.button_solid004 a:hover {
+    cursor: pointer;
+    filter: drop-shadow(0px 2px 4px #ccc);
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+
+  }
+
+  button[type="submit"]:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 30px -5px rgb(0 0 0 / 15%), 0 0 5px rgb(0 0 0 / 10%);
-}
+        box-shadow: 0 15px 30px -5px rgb(0 0 0 / 15%), 0 0 5px rgb(0 0 0 / 10%);
+  }

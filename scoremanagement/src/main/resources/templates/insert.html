@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +7,29 @@
     <title>データ入力</title>
 <body>
 <div class="container">
-    <form>
+    <p class="success">[[${success}]]</p>
+    <form action="insert" method="post" th:object="${ScoreInsertForm}">
         <p class="fsize">データの入力</p>
-        <input type="text" placeholder="学年" />
-        <input type="text" placeholder="模試名" />
-        <input type="text" placeholder="科目" />
-        <input type="text" placeholder="点数" />
-        <input type="text" placeholder="偏差値" />
+        <input type="text" name="grade" th:filed="*{grade}" placeholder="学年" />
+        <div class="error" th:each="error: ${#fields.errors('grade')}">
+            [[ ${error} ]]
+        </div>
+        <input type="text" name="type" th:filed="*{type}" placeholder="模試名" />
+        <div class="error" th:each="error: ${#fields.errors('type')}">
+            [[ ${error} ]]
+        </div>
+        <input type="text" name="subject" th:filed="*{subject}" placeholder="科目" />
+        <div class="error" th:each="error: ${#fields.errors('subject')}">
+            [[ ${error} ]]
+        </div>
+        <input type="text" name="score" th:filed="*{score}" placeholder="点数" />
+        <div class="error" th:each="error: ${#fields.errors('score')}">
+            [[ ${error} ]]
+        </div>
+        <input type="text" name="deviation" th:filed="*{deviation}" placeholder="偏差値" />
+        <div class="error" th:each="error: ${#fields.errors('deviation')}">
+            [[ ${error} ]]
+        </div>
         <button type="submit">データを登録</button>
         <div class="button_solid002">
             <a href="/menu">メニューに戻る</a>

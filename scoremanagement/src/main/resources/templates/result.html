@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="css/result.css">
     <title>データ画面</title>
 <body>
-<form action="/data-filter" method="post" th:object="${dataForm}">
-    <p class="fsize">絞り込みデータの入力</p>
-    <input type="text" placeholder="学年" th:field="*{grade}" />
-    <input type="text" placeholder="模試名" th:field="*{mosiType}" />
-    <input type="text" placeholder="科目" th:field="*{subject}" />
+<form>
+    <input type="text" placeholder="学年" field="*{grade}" />
+    <input type="text" placeholder="模試名" field="*{mosiType}" />
+    <input type="text" placeholder="科目" field="*{subject}" />
     <button type="submit">絞込検索</button>
 </form>
 <br>
+<p class="success">[[${success}]]</p>
 <table class="design01">
     <tr>
         <th>学年</th>
@@ -21,17 +21,23 @@
         <th>科目</th>
         <th>点数</th>
         <th>偏差値</th>
+        <th>詳細</th>
     </tr>
+    <tbody>
     <tr th:each="data : ${dataList}">
-        <td th:text="${data.grade}">あ</td>
-        <td th:text="${data.mosiType}">い</td>
-        <td th:text="${data.subject}">う</td>
-        <td th:text="${data.score}">え</td>
-        <td th:text="${data.stdScore}">お</td>
+
+        <td th:text="${data.grade}"></td>
+        <td th:text="${data.type}"></td>
+        <td th:text="${data.subject}"></td>
+        <td th:text="${data.score}"></td>
+        <td th:text="${data.deviation}"></td>
+        <td><a class="basic-btn detail" th:href="'/detail/'+${data.id}">詳細</a></td>
+
     </tr>
+    </tbody>
 </table>
 <div class="button_solid002">
-    <a href="menu.html">メニューに戻る</a>
+    <a href="/menu">メニューに戻る</a>
 </div>
 </body>
 </head>

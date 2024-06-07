@@ -3,68 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <title>更新</title>
-    <link href="/css/commons.css" rel="stylesheet">
+    <link href="/css/update.css" rel="stylesheet">
 </head>
 <body>
-<th:block th:insert="common/header"></th:block>
 
-<hr>
-
-
-<hr>
-
-<div class="insert">
-    <div class="form-body">
+<div class="container">
+    <p class="fsize">更新</p>
 
 
         <form th:action="@{/updateInput/__${id}__}" method="post" th:object="${UpdateForm}">
             <fieldset class="label-130">
                 <div>
                     <label>学年</label>
-                    <input type="text" name="product_id" th:value="${product.product_id}" class="base-text" th:filed="*{product_id}">
-                    <span class="error" th:each="error: ${#fields.errors('product_id')}">
-                        [[ ${error} ]]
-                    </span>
+                    <input type="text" name="grade" th:value="${update.grade}" class="base-text" th:filed="*{grade}">
+<!--                    <span class="error" th:each="error: ${#fields.errors('product_id')}">-->
+<!--                        [[ ${error} ]]-->
+<!--                    </span>-->
                 </div>
                 <div>
                     <label>点数</label>
-                    <input type="text" name="name" th:value="${product.name}" class="base-text" th:filed="*{name}">
-                    <span class="error" th:each="error: ${#fields.errors('name')}">
-                        [[ ${error} ]]
-                    </span>
+                    <input type="text" name="score" th:value="${update.score}" class="base-text" th:filed="*{score}">
+<!--                    <span class="error" th:each="error: ${#fields.errors('name')}">-->
+<!--                        [[ ${error} ]]-->
+<!--                    </span>-->
                 </div>
                 <div>
                     <label>科目</label>
-                    <input type="text" name="price" th:value="${product.price}" class="base-text" th:filed="*{price}">
-                    <span class="error" th:each="error: ${#fields.errors('price')}">
-                        [[ ${error} ]]
-                    </span>
+                    <input type="text" name="subject" th:value="${update.subject}" class="base-text" th:filed="*{subject}">
+<!--                    <span class="error" th:each="error: ${#fields.errors('price')}">-->
+<!--                        [[ ${error} ]]-->
+<!--                    </span>-->
                 </div>
                 <div>
                     <label>模試の種類</label>
-                    <input type="text" name="price" th:value="${product.price}" class="base-text" th:filed="*{price}">
-                    <span class="error" th:each="error: ${#fields.errors('price')}">
-                        [[ ${error} ]]
-                    </span>
+                    <input type="text" name="type" th:value="${update.type}" class="base-text" th:filed="*{type}">
+<!--                    <span class="error" th:each="error: ${#fields.errors('price')}">-->
+<!--                        [[ ${error} ]]-->
+<!--                    </span>-->
                 </div>
+                <div>
                 <label>偏差値</label>
-                <input type="text" name="price" th:value="${product.price}" class="base-text" th:filed="*{price}">
-                <span class="error" th:each="error: ${#fields.errors('price')}">
-                        [[ ${error} ]]
-                    </span>
+                <input type="text" name="deviation" th:value="${update.deviation}" class="base-text" th:filed="*{deviation}">
+<!--                <span class="error" th:each="error: ${#fields.errors('price')}">-->
+<!--                        [[ ${error} ]]-->
+<!--                    </span>-->
 
     </div>
 
     </fieldset>
     <div class="btns">
         <button type="button" onclick="openModal()" class="basic-btn">更新</button>
-        <input type="button" onclick="location.href='result.html'" value="成績一覧に戻る" class="cancel-btn">
+        <input type="button" onclick="location.href='/result'" value="成績一覧に戻る" class="cancel-btn">
     </div>
+        </form>
 
-</div>
-</div>
-</form>
-</div>
+    </div>
 </div>
 
 </body>

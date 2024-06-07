@@ -2,49 +2,43 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>商品詳細</title>
-    <link href="/css/commons.css" rel="stylesheet">
+    <title>項目詳細</title>
+    <link href="/css/detail.css" rel="stylesheet">
 </head>
 <body>
 
-<th:block th:insert="common/header"></th:block>
-<hr>
 
-<div class="update">
-    <div class="form-body">
-        <div class="img_block">
-
-        </div>
+<div class="container">
+        <p class="fsize">詳細</p>
         <form th:action="@{/detail/__${id}__}" method="post">
             <fieldset class="label-130 product_block">
                 <div>
                     <label>学年</label>
-                    <input type="text" name="product_id" th:value="${detail.product_id}" readonly class="base-text">
+                    <input type="text" name="grade" th:value="${detail.grade}" readonly class="base-text">
                 </div>
                 <div>
                     <label>点数</label>
-                    <input type="text" name="name" th:value="${detail.name}" readonly class="base-text">
+                    <input type="text" name="score" th:value="${detail.score}" readonly class="base-text">
                 </div>
                 <div>
                     <label>科目</label>
-                    <input type="text" name="price" th:value="${detail.price}" readonly class="base-text">
+                    <input type="text" name="subject" th:value="${detail.subject}" readonly class="base-text">
                 </div>
                 <div>
                     <label>模試の種類</label>
-                    <input type="text" name="price" th:value="${product.price}" class="base-text" th:filed="*{price}">
-                    <span class="error" th:each="error: ${#fields.errors('price')}">
-                        [[ ${error} ]]
-                    </span>
+                    <input type="text" name="type" th:value="${detail.type}" class="base-text">
+
                 </div>
+                <div>
                     <label>偏差値</label>
-                    <input type="text" name="price" th:value="${detail.price}" readonly class="base-text">
+                    <input type="text" name="deviation" th:value="${detail.deviation}" readonly class="base-text">
                 </div>
             </fieldset>
             <div>
                 <div class="btns">
-                    <input type="button" onclick="openModal()" value="削除" class="basic-btn" th:if="${session.user.role==1}">
-                    <input type="button" onclick="location.href='update.html'" value="編集" class="basic-btn" th:if="${session.user.role==1}">
-                    <input type="button" onclick="location.href='result.html'" value="戻る" class="cancel-btn">
+                    <input type="submit" onclick="/result" value="削除" class="basic-btn" >
+                    <input type="button" th:onclick="|location.href='/update/__${id}__'|" value="編集" class="basic-btn" >
+                    <input type="button" onclick="location.href='/result'" value="戻る" class="cancel-btn">
                 </div>
 
             </div>
